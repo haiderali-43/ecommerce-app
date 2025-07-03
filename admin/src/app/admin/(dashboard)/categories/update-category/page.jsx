@@ -7,7 +7,7 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation'
 
 const page = () => {
-    const router = useRouter()
+    const router = useRouter();
     const [name, setName] = useState('')
     const [parentCategory, setParentCategory] = useState('')
 

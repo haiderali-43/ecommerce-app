@@ -7,7 +7,7 @@ import { Switch } from '@/components/ui/switch'
 import { IoPencil } from 'react-icons/io5'
 import { MdDelete } from 'react-icons/md'
 import TableForAll from '@/components/TableForAll'
-import Image from 'next/image'
+
 
 const Page = () => {
   const router = useRouter()

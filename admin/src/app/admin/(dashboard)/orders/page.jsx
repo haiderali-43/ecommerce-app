@@ -1,13 +1,4 @@
 
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
-
 import React from 'react'
 
 import { IoPencil } from 'react-icons/io5'

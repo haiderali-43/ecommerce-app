@@ -1,8 +1,10 @@
 "use client";
+
+import React from "react"; // Optional in React 17+, but required for some ESLint configs
+import PropTypes from "prop-types";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/AdminSidebar";
 import { useState, useRef, useEffect } from "react";
-
 
 const DashboardLayout = ({ children }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -12,8 +14,6 @@ const DashboardLayout = ({ children }) => {
         setIsSidebarOpen(true);
     };
 
-
-
     useEffect(() => {
         const handleOutsideClick = (event) => {
             if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
@@ -22,30 +22,32 @@ const DashboardLayout = ({ children }) => {
         };
 
         document.addEventListener("mousedown", handleOutsideClick);
-
         return () => {
             document.removeEventListener("mousedown", handleOutsideClick);
         };
     }, []);
 
-
-
     return (
-        <div className="bg-[#f6f9fc]  h-screen">
+        <div className="bg-[#f6f9fc] h-screen">
             <div
                 ref={sidebarRef}
-                className={`fixed top-0 left-0 z-[10000] transition-transform duration-500 ease-in-out transform  ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-                    }`}
+                className={`fixed top-0 left-0 z-[10000] transition-transform duration-500 ease-in-out transform ${
+                    isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+                }`}
             >
                 <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
-
             </div>
+
             <div className="flex flex-col h-screen">
                 <Navbar handleNavbarClose={handleNavbarOpen} />
                 <div className="flex-1 mt-16">{children}</div>
             </div>
         </div>
     );
+};
+
+DashboardLayout.propTypes = {
+    children: PropTypes.node.isRequired,
 };
 
 export default DashboardLayout;
