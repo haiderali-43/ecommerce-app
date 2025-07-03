@@ -1,6 +1,6 @@
 import React from "react";
 
-const SignUpPage = () => {
+const SignInPage = () => {
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
             <div className="w-full max-w-md p-8 bg-white rounded-2xl shadow-lg">
@@ -36,5 +36,5 @@ const SignUpPage = () => {
     );
 };
 
-export default SignUpPage;
+export default SignInPage;
 
