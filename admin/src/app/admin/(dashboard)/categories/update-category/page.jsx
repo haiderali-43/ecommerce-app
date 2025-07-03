@@ -6,7 +6,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 
-const page = () => {
+const UpdateCategory = () => {
     const router = useRouter();
     const [name, setName] = useState('')
     const [parentCategory, setParentCategory] = useState('')
@@ -99,4 +99,4 @@ const page = () => {
     )
 }
 
-export default page
+export default UpdateCategory

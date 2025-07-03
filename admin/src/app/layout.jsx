@@ -1,4 +1,6 @@
 // Project: bazaar-admin-panel
+import React from "react";
+import PropTypes from "prop-types";
 import { Inter, Itim } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
@@ -19,15 +21,13 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <nav className='flex justify-between px-2 md:px-4 mt-4'>
           <div className='flex space-x-2'>
-            <Link href={'/'}><Image src="/logo.svg" alt="logo" className='hidden md:block cursor-pointer' width={100} height={100} /></Link>
-            <Link href={'/'}><Image src="/logo.svg" alt="logo" className='md:hidden cursor-pointer' width={70} height={70} /></Link>
-
-
-            <span className={`${itim.className} text-xl mt-2 hidden md:block `}>Seller central</span>
+            <Link href='/'><Image src="/logo.svg" alt="logo" className='hidden md:block cursor-pointer' width={100} height={100} /></Link>
+            <Link href='/'><Image src="/logo.svg" alt="logo" className='md:hidden cursor-pointer' width={70} height={70} /></Link>
+            <span className={`${itim.className} text-xl mt-2 hidden md:block`}>Seller central</span>
           </div>
           <div className='space-x-4'>
-            <Link href={'/auth/sign-in'} ><Button variant="outline">Sign in</Button></Link>
-            <Link href={'/auth/sign-up'}><Button>Sign up</Button></Link>
+            <Link href='/auth/sign-in'><Button variant="outline">Sign in</Button></Link>
+            <Link href='/auth/sign-up'><Button>Sign up</Button></Link>
           </div>
         </nav>
         <span>{children}</span>
@@ -35,3 +35,8 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+RootLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+

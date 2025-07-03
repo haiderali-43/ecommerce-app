@@ -1,7 +1,6 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import General from '@/components/site-settings/General'
-import Topbar from '@/components/site-settings/Topbar'
 import Footer from '@/components/site-settings/Footer'
 import Social from '@/components/site-settings/Social'
 import Banner from '@/components/site-settings/Banner'

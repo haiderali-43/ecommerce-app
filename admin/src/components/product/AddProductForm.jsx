@@ -9,7 +9,7 @@ import {
 } from '../ui/select'
 import { Button } from '../ui/button'
 import Image from 'next/image'
-import { CldImage } from 'next-cloudinary'
+
 
 
 const AddProductForm = () => {
